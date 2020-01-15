@@ -1,8 +1,7 @@
 const express = require("express");
+const { Student } = require("../models/index.models");
 const router = express.Router();
 
-router.get("/", (req, res) => {
-    res.json({ info: "It's working!!!" });
-});
+router.get("/", Student.readAll);
 
 module.exports = router;

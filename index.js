@@ -13,11 +13,8 @@ app.use(morgan("dev"));
 
 app.use(require("./src/routes/index.routes"));
 
-app.use((req, res) => {
-    res.status(404).send({
-        route: req.originalUrl,
-        message: "Not found!"
-    });
+app.get("/", (req, res) => {
+    res.send({ message: "endpoint working" });
 });
 
 console.log(listEndpoints(app));
