@@ -9,6 +9,10 @@ const pool = new Pool({
     port: db.port
 });
 
+pool.on("connect", () => {
+    console.log(">> Connected to the db");
+});
+
 const query = txt => {
     return new Promise((resolve, reject) => {
         pool.query(txt)
@@ -16,13 +20,5 @@ const query = txt => {
             .catch(err => reject(err));
     });
 };
-
-pool.on("error", () => {
-    console.log("> error occurred from the database");
-});
-
-pool.once("open", () => {
-    console.log("> successfully opened the database");
-});
 
 module.exports = { query };
