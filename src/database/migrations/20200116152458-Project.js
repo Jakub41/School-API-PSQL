@@ -6,12 +6,13 @@ module.exports = {
             project_id: {
                 primaryKey: true,
                 type: Sequelize.UUID,
-                defaultValue: Sequelize.UUIDV4,
-                autoIncrement: true
+                defaultValue: Sequelize.UUIDV4
+                //autoIncrement: true
             },
             student_id: {
                 foreignKey: true,
-                type: Sequelize.UUIDV4,
+                type: Sequelize.UUID,
+                defaultValue: Sequelize.UUIDV4,
                 allowNull: false
             },
             name: {
