@@ -1,3 +1,4 @@
+const uuid = require('uuid/v4');
 "use strict";
 
 module.exports = {
@@ -6,7 +7,7 @@ module.exports = {
             _id: {
                 primaryKey: true,
                 type: Sequelize.UUID,
-                defaultValue: Sequelize.UUIDV4
+                defaultValue: uuid()
             },
 
             name: {
@@ -27,11 +28,13 @@ module.exports = {
 
             createdAt: {
                 type: Sequelize.DATE,
+                defaultValue: new Date(),
                 allowNull: false
             },
 
             updatedAt: {
                 type: Sequelize.DATE,
+                defaultValue: new Date(),
                 allowNull: false
             }
         });

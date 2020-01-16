@@ -1,10 +1,11 @@
+const uuid = require('uuid/v4');
+
 module.exports = (sequelize, DataTypes) => {
     const Project = sequelize.define("Project", {
         project_id: {
             primaryKey: true,
             type: DataTypes.UUID,
-            defaultValue: DataTypes.UUIDV4,
-            //autoIncrement: true
+            defaultValue: uuid()
         },
         student_id: {
             type: DataTypes.UUIDV4,
@@ -33,10 +34,12 @@ module.exports = (sequelize, DataTypes) => {
         },
         createdAt: {
             type: DataTypes.DATE,
+            defaultValue: new Date(),
             allowNull: false
         },
         updatedAt: {
             type: DataTypes.DATE,
+            defaultValue: new Date(),
             allowNull: false
         }
     });
