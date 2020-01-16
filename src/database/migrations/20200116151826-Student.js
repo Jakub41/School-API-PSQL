@@ -6,26 +6,30 @@ module.exports = {
             _id: {
                 primaryKey: true,
                 type: Sequelize.UUID,
-                defaultValue: Sequelize.UUIDV4,
-                //autoIncrement: true
+                defaultValue: Sequelize.UUIDV4
             },
+
             name: {
                 type: Sequelize.STRING,
                 allowNull: false
             },
+
             email: {
                 type: Sequelize.TEXT,
                 allowNull: false,
                 unique: true
             },
+
             dateOfBirth: {
                 type: Sequelize.DATEONLY,
                 allowNull: false
             },
+
             createdAt: {
                 type: Sequelize.DATE,
                 allowNull: false
             },
+
             updatedAt: {
                 type: Sequelize.DATE,
                 allowNull: false
